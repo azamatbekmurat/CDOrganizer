@@ -1,0 +1,11 @@
+<h1>Add a new CD to @Model.GetName()</h1>
+<form action='/cds' method='post'>
+  <input id='artist-id' name='artist-id' type='hidden' value='@Model.GetId()'>
+  <label for='cd-title'>CD title</label>
+  <input id='cd-title' name='cd-title' type='text'>
+  <button type='submit'>Add CD</button>
+</form>
+
+
+<p><a href="/">Back home</a></p>
+<p><a href="/cds">Back to CDs.</a></p>
