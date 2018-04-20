@@ -7,7 +7,7 @@ namespace CDOrganizer.Models
   {
     private static List<Artist> _instances = new List<Artist> {};
     private string _name;
-    private string _id;
+    private int _id;
     private List<CD> _cds;
 
     public Artist(string artistName)
@@ -26,7 +26,7 @@ namespace CDOrganizer.Models
     {
       return _id;
     }
-    public static List<CD> GetAll()
+    public static List<Artist> GetAll()
     {
       return _instances;
     }

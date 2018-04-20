@@ -28,8 +28,8 @@ namespace CDOrganizer.Controllers
       return View("Index", allArtists);
     }
 
-    [HttpGet("/artists/{cd}")]
-    public ActionResult Details(int cd)
+    [HttpGet("/artists/{id}")]
+    public ActionResult Details(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Artist selectedArtist = Artist.Find(id);
@@ -45,7 +45,8 @@ namespace CDOrganizer.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Artist foundArtist = Artist.Find(Int32.Parse(Request.Form["artist-id"]));
       string cdTitle = Request.Form["cd-title"];
-      CD newCD = new CD(cdTitle);
+      string cdGenre = Request.Form["cd-genre"];
+      CD newCD = new CD(cdTitle, cdGenre);
       foundArtist.AddCD(newCD);
       List<CD> artistCDs = foundArtist.GetCDs();
       model.Add("cds", artistCDs);
